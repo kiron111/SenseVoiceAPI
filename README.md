@@ -61,6 +61,7 @@ Windows Powershell
 $env:HF_ENDPOINT = "https://hf-mirror.com"
 
 也可手動到huggingface, hf-mirror.com 手動下載模型到resource 資料夾:
+
 連結︰[https://huggingface.co/lovemefan/SenseVoice-onnx]
 
 目錄結構如下︰

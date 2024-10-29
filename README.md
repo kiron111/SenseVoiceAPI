@@ -56,11 +56,14 @@ pip install requirements.txt
 第一次使用会自动从huggingface下载，如果下载不下来，可以使用hugginface代理
 
 Linux:
+
 export HF_ENDPOINT=https://hf-mirror.com
+
 Windows Powershell
+
 $env:HF_ENDPOINT = "https://hf-mirror.com"
 
-也可手動到huggingface, hf-mirror.com 手動下載模型到resource 資料夾:
+也可到huggingface, hf-mirror.com 手動下載模型到resource 資料夾:
 
 連結︰[https://huggingface.co/lovemefan/SenseVoice-onnx]
 

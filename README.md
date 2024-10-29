@@ -13,10 +13,17 @@ SenseVoice是具有音頻理解能力的音頻基礎模型， 包括語音識別
 - 支持轉換為繁體
 - 加設key, 免被外來人濫用
 
+個人取捨︰
 我安裝在香橙派, 主要是用來給手機whatsapp 粵語語音轉文字STT 用, 這模型輕量，對粵語友好；
 其他語言，可以有更優解，請移玉步︰
 普通話可以用Paraformer(更高準確率), 英文及其他語言直接用whisper (Groq-Whisper 也支持一定使用量的免費額度, 但香港要設換VPN才連上)
 對於粵語，這SenseVoiceSmall 的響應時間和推理時間都短，大約是whisper base 的速度，但質量有whisper medium 或以上的效果
+對於輸出結果有一定精度需求，建議用whisper large V3 (推介︰faster Whisper v3 版本；Turbo v3 對非歐洲語言，優化不好；尤其粵語、越南)
+
+支持平台︰
+x86 / arm64(已測試)
+linux(已測試)/window/mac/ android:Termux
+CPU(已測試)/GPU (Nvidia 安裝onnxruntime-gpu, AMD/Intel GPU:onnxruntime-directml)
 
 安裝︰
 (使用conda, 或 python venv，隨便你，如果有多種途，還是建議你把環境分開)
@@ -31,10 +38,11 @@ pip install requirements.txt
 ```shell
 uvicorn main:app --host 0.0.0.0 --port 9528
 ```
+
 API 參數設置︰
 ```
 SENSE_VOICE_KEY 鑰匙 ︳必填參數 ︳隨便設置，但必須在keys.csv 的第一列中，第一行除外)
-device 推理設備 ︳選填參數 ︳默認 -1 是CPU, 0 是GPU, 1 是第二張GPU)
+device 推理設備 ︳選填參數 ︳默認 -1 :CPU, 0 :GPU_0, 1:GPU_1, GPU需安裝 onnxruntime-gpu)
 num_threads 多線程數量 ︳選填參數 ︳默認 4 (在RK3588 上測試了，再增加綫程數量，反而更慢)
 language ︳選填參數 ︳默認'auto', 其他選項 "zh": 漢語, "en": 英文, "yue": 粵語, "ja": 日文, "ko":韓
 use_int8 ︳選填參數 ︳默認 False, 使用fp16精度；True: 選int8 精度，速度更快；但可能有準確度損失
@@ -42,4 +50,16 @@ use_itn ︳選填參數 ︳默認 True, 使用itn 模型，斷句和加上標點
 replace_tag︳選填參數 ︳默認 None, 近乎最詳盡的格式，有標明語言和情緒及其他事件，其他選項 emoji : 標示顏文字； empty: 純文字)
 s2t︳選填參數 ︳默認 False: 不轉換；True: 轉換成繁體輸出
 timecode︳選填參數 ︳默認 True: 有類似timecode的時間標注； False: 不輸出timecode
+```
+
+CURL 例子︰
+```shell
+curl -X POST "http://192.168.3.15:9528/transcribe" -F "file=@"D:\python_project\SenseVoiceAPI\TVB.mp3"" -
+F "SENSE_VOICE_KEY=sv-1234567"
+```
+```shell
+curl -X POST "http://192.168.3.15:9528/transcribe" -F "file=@"D:\python_project\SenseVoiceAPI\TVB.mp3"" -F "SENSE_VOICE_KEY=sv-1234567" -F "replace_tag=emoji" -F "s2t=True"
+```
+```shell
+curl -X POST "http://192.168.3.15:9528/transcribe" -F "file=@"D:\python_project\SenseVoiceAPI\TVB.mp3"" -F "SENSE_VOICE_KEY=sv-1234567" -F "replace_tag=empty" -F "s2t=True" -F "timecode=False"
 ```

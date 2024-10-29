@@ -32,6 +32,7 @@ pip install requirements.txt
 uvicorn main:app --host 0.0.0.0 --port 9528
 ```
 API 參數設置︰
+```
 SENSE_VOICE_KEY 鑰匙 ︳必填參數 ︳隨便設置，但必須在keys.csv 的第一列中，第一行除外)
 device 推理設備 ︳選填參數 ︳默認 -1 是CPU, 0 是GPU, 1 是第二張GPU)
 num_threads 多線程數量 ︳選填參數 ︳默認 4 (在RK3588 上測試了，再增加綫程數量，反而更慢)
@@ -41,3 +42,4 @@ use_itn ︳選填參數 ︳默認 True, 使用itn 模型，斷句和加上標點
 replace_tag︳選填參數 ︳默認 None, 近乎最詳盡的格式，有標明語言和情緒及其他事件，其他選項 emoji : 標示顏文字； empty: 純文字)
 s2t︳選填參數 ︳默認 False: 不轉換；True: 轉換成繁體輸出
 timecode︳選填參數 ︳默認 True: 有類似timecode的時間標注； False: 不輸出timecode
+```

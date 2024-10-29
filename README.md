@@ -8,6 +8,7 @@ SenseVoice是具有音頻理解能力的音頻基礎模型， 包括語音識別
 當前SenseVoice-small支持中、粵、英、日、韓語的多語言語音識別，情感識別和事件檢測能力，具有極低的推理延遲。 本項目提供python版的SenseVoice模型所需的onnx環境安裝的與推理方式。
 
 **實現以下目的︰**
+
 - 在樹莓派/香橙派等邊緣裝置, 安裝運行，以全天候形式架設api server 
 - 透過自由切換 fp16/int8 的SenseVoiceSmall 模型
 - 自由切換不同輸出的文字格式(FUNASR 官方的詳細標注格式，顏文字emoji, 包含timecode 或者純文字版本)
@@ -16,15 +17,23 @@ SenseVoice是具有音頻理解能力的音頻基礎模型， 包括語音識別
 - 加設key, 免被外來人濫用
 
 **個人取捨︰**
+
 我安裝在香橙派, 主要是用來給手機whatsapp 粵語語音轉文字STT 用, 這模型輕量，對粵語友好；
+
 其他語言，可以有更優解，請移玉步︰
+
 普通話可以用Paraformer(更高準確率), 英文及其他語言直接用whisper (Groq-Whisper 也支持一定使用量的免費額度, 但香港要設換VPN才連上)
+
 對於粵語，這SenseVoiceSmall 的響應時間和推理時間都短，大約是whisper base 的速度，但質量有whisper medium 或以上的效果
+
 對於輸出結果有一定精度需求，建議用whisper large V3 (推介︰faster Whisper v3 版本；Turbo v3 對非歐洲語言，優化不好；尤其粵語、越南)
 
 **支持平台︰**
+
 x86 / arm64(已測試)
+
 linux(已測試)/window/mac/ android:Termux
+
 CPU(已測試)/GPU (Nvidia 安裝onnxruntime-gpu, AMD/Intel GPU:onnxruntime-directml)
 
 **安裝︰**

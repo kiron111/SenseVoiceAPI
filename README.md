@@ -53,6 +53,40 @@ pip install requirements.txt
 ```
 另外，必須安裝ffmpeg, 使其 on path (windows 在系統>>環境參數>>路徑 設置) (linux 好像安裝了就是自動設置好)
 
+第一次使用会自动从huggingface下载，如果下载不下来，可以使用hugginface代理
+
+Linux:
+export HF_ENDPOINT=https://hf-mirror.com
+Windows Powershell
+$env:HF_ENDPOINT = "https://hf-mirror.com"
+
+也可手動到huggingface, hf-mirror.com 手動下載模型到resource 資料夾:
+連結︰[https://huggingface.co/lovemefan/SenseVoice-onnx]
+
+目錄結構如下︰
+SenseVoiceAPI
+├── audio
+├── keys.csv
+├── main.py
+├── onnx
+│   ├── fsmn_vad_ort_session.py
+│   └── sense_voice_ort_session.py
+├── resource
+│   ├── am.mvn
+│   ├── asr_example_zh.wav
+│   ├── chn_jpn_yue_eng_ko_spectok.bpe.model
+│   ├── embedding.npy
+│   ├── fsmn-am.mvn
+│   ├── fsmn-config.yaml
+│   ├── fsmnvad-offline.onnx
+│   ├── README.md
+│   ├── sense-voice-encoder-int8.onnx
+│   └── sense-voice-encoder.onnx
+└── utils
+    ├── frontend.py
+    └── fsmn_vad.py
+
+
 **運行 fastapi server︰**
 ```shell
 uvicorn main:app --host 0.0.0.0 --port 9528

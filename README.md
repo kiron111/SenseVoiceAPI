@@ -29,13 +29,11 @@ SenseVoice是具有音頻理解能力的音頻基礎模型， 包括語音識別
 對於輸出結果有一定精度需求，建議用whisper large V3 (推介︰faster Whisper v3 版本；Turbo v3 對非歐洲語言，優化不好；尤其粵語、越南)
 
 **支持平台︰**
-
+```
 x86 / arm64(已測試)
-
-linux(已測試)/window/mac/ android:Termux
-
-CPU(已測試)/GPU (Nvidia 安裝onnxruntime-gpu, AMD/Intel GPU:onnxruntime-directml)
-
+linux(已測試) / window / mac / android:Termux
+CPU(已測試) / GPU (Nvidia 安裝onnxruntime-gpu, AMD/Intel GPU:onnxruntime-directml)
+```
 **安裝︰**
 
 (可以使用conda, 或 python venv 建立虛擬環境；也可以直接安裝；

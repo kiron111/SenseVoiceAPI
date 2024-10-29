@@ -2,6 +2,7 @@
 
 原作者建立了一個基於SenseVoice ONNX 的python 庫，我修改他的代碼，以fastapi建立個api (不用每次加載模型，省去5秒的啟動時間)
 
+
 **SenseVoice簡介︰**
 
 SenseVoice是具有音頻理解能力的音頻基礎模型， 包括語音識別（ASR）、語種識別（LID）、語音情感識別（SER）和聲學事件分類（AEC）或聲學事件檢測（AED）。

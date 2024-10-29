@@ -37,7 +37,11 @@ linux(已測試)/window/mac/ android:Termux
 CPU(已測試)/GPU (Nvidia 安裝onnxruntime-gpu, AMD/Intel GPU:onnxruntime-directml)
 
 **安裝︰**
-(使用conda, 或 python venv，隨便你，如果有多種途，還是建議你把環境分開)
+
+(可以使用conda, 或 python venv 建立虛擬環境；也可以直接安裝；
+
+如果有多種項目用途，還是建議你把環境分開)
+
 ```shell
 git clone https://github.com/kiron111/SenseVoiceAPI.git
 cd SenseVoiceAPI

@@ -1,0 +1,12 @@
+setuptools<=65.0
+kaldi_native_fbank
+onnxruntime
+# onnxruntime-gpu
+sentencepiece==0.2.0
+soundfile==0.12.1
+huggingface_hub
+OpenCC
+fastapi
+uvicorn
+python-multipart
+numpy<=1.26.4

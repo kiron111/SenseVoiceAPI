@@ -57,11 +57,14 @@ CURL 例子︰
 curl -X POST "http://192.168.3.15:9528/transcribe" -F "file=@"D:\python_project\SenseVoiceAPI\TVB.mp3"" -
 F "SENSE_VOICE_KEY=sv-1234567"
 ```
-![image_url](https://github.com/kiron111/SenseVoiceAPI/blob/main/screenshots/none.png)
-https://github.com/kiron111/SenseVoiceAPI/blob/main/screenshots/none.png
+![none.png](https://github.com/kiron111/SenseVoiceAPI/blob/main/screenshots/none.png)
+
 ```shell
 curl -X POST "http://192.168.3.15:9528/transcribe" -F "file=@"D:\python_project\SenseVoiceAPI\TVB.mp3"" -F "SENSE_VOICE_KEY=sv-1234567" -F "replace_tag=emoji" -F "s2t=True"
 ```
+![emoji_s2t](https://github.com/kiron111/SenseVoiceAPI/blob/main/screenshots/emoji_s2t.png)
+
 ```shell
 curl -X POST "http://192.168.3.15:9528/transcribe" -F "file=@"D:\python_project\SenseVoiceAPI\TVB.mp3"" -F "SENSE_VOICE_KEY=sv-1234567" -F "replace_tag=empty" -F "s2t=True" -F "timecode=False"
 ```
+![empty_s2t_no_timecode](https://github.com/kiron111/SenseVoiceAPI/blob/main/screenshots/empty_s2t_no_timecode.png)

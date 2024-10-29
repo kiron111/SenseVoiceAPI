@@ -20,6 +20,12 @@ SenseVoice是具有音频理解能力的音频基础模型， 包括语音识别
 
 安裝︰
 (使用conda, 或 python venv，隨便你，如果有多種途，還是建議你把環境分開)
+```shell
 git clone https://github.com/kiron111/SenseVoiceAPI.git
 cd SenseVoiceAPI
 pip install requirements.txt
+```
+運行︰
+```shell
+uvicorn main:app --host 0.0.0.0 --port 9528
+```

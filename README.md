@@ -7,6 +7,8 @@
 SenseVoice是具有音頻理解能力的音頻基礎模型， 包括語音識別（ASR）、語種識別（LID）、語音情感識別（SER）和聲學事件分類（AEC）或聲學事件檢測（AED）。
 當前SenseVoice-small支持中、粵、英、日、韓語的多語言語音識別，情感識別和事件檢測能力，具有極低的推理延遲。 本項目提供python版的SenseVoice模型所需的onnx環境安裝的與推理方式。
 
+使用ONNX, 就安裝onnxruntime, 沒有 PyTorch CUDA/ROCM 那樣大体量，也容易安裝
+
 **實現以下目的︰**
 
 - 在樹莓派/香橙派等邊緣裝置, 安裝運行，以全天候形式架設api server 

@@ -3,6 +3,7 @@
 原作者建立了一個基於SenseVoice ONNX 的python 庫，我修改他的代碼，以fastapi建立個api
 
 **SenseVoice簡介︰**
+
 SenseVoice是具有音頻理解能力的音頻基礎模型， 包括語音識別（ASR）、語種識別（LID）、語音情感識別（SER）和聲學事件分類（AEC）或聲學事件檢測（AED）。
 當前SenseVoice-small支持中、粵、英、日、韓語的多語言語音識別，情感識別和事件檢測能力，具有極低的推理延遲。 本項目提供python版的SenseVoice模型所需的onnx環境安裝的與推理方式。
 

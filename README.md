@@ -1,13 +1,13 @@
 參考︰https://github.com/lovemefan/SenseVoice-python
 
-原作者建立了一個基於SenseVoice ONNX 的python 庫，我修改他的代碼，以fastapi建立個api
+原作者建立了一個基於SenseVoice ONNX 的python 庫，我修改他的代碼，以fastapi建立個api (不用每次加載模型，省去5秒的啟動時間)
 
 **SenseVoice簡介︰**
 
 SenseVoice是具有音頻理解能力的音頻基礎模型， 包括語音識別（ASR）、語種識別（LID）、語音情感識別（SER）和聲學事件分類（AEC）或聲學事件檢測（AED）。
 當前SenseVoice-small支持中、粵、英、日、韓語的多語言語音識別，情感識別和事件檢測能力，具有極低的推理延遲。 本項目提供python版的SenseVoice模型所需的onnx環境安裝的與推理方式。
 
-使用ONNX, 就安裝onnxruntime, 沒有 PyTorch CUDA/ROCM 那樣大体量，也容易安裝
+使用ONNX 的優勢, 就安裝onnxruntime, 沒有 PyTorch CUDA/ROCM 那樣大体量，也容易安裝
 
 **實現以下目的︰**
 
@@ -27,6 +27,8 @@ SenseVoice是具有音頻理解能力的音頻基礎模型， 包括語音識別
 普通話可以用Paraformer(更高準確率), 英文及其他語言直接用whisper (Groq-Whisper 也支持一定使用量的免費額度, 但香港要設換VPN才連上)
 
 對於粵語，這SenseVoiceSmall 的響應時間和推理時間都短，大約是whisper base 的速度，但質量有whisper medium 或以上的效果
+
+(不計算ffmpeg 的轉換檔案時間，在RK3588，用SenseVoiceSmall 有10X 倍推理速度)
 
 對於輸出結果有一定精度需求，建議用whisper large V3 (推介︰faster Whisper v3 版本；Turbo v3 對非歐洲語言，優化不好；尤其粵語、越南)
 

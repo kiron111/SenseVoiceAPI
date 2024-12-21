@@ -49,7 +49,7 @@ CPU(已測試) / GPU (Nvidia 安裝onnxruntime-gpu, AMD/Intel GPU:onnxruntime-di
 ```shell
 git clone https://github.com/kiron111/SenseVoiceAPI.git
 cd SenseVoiceAPI
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 另外，必須安裝ffmpeg, 使其 on path (windows 在系統>>環境參數>>路徑 設置) (linux 好像安裝了就是自動設置好)
 
